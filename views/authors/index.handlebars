@@ -1,0 +1,17 @@
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Authors</h1>
+        <a href="/authors/form" class="btn btn-primary">Create a new author</a>
+    </div>
+
+    <div class="list-group">
+        {{#each authors}}
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-1">{{this.firstName}} {{this.lastName}}</h5>
+                </div>
+                <a href="/authors/edit?id={{this.id}}" class="btn btn-secondary btn-sm">Edit</a>
+            </div>
+        {{/each}}
+    </div>
+</div>

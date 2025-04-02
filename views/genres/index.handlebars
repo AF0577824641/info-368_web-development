@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <h1>Genres</h1>
+  <a href="/genres/form" class="btn btn-primary mb-3">New Genre</a>
+
+  {{#if genres.length}}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each genres}}
+          <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.description}}</td>
+            <td>
+              <a href="/genres/show/{{@index}}" class="btn btn-info btn-sm">View</a>
+              <a
+                href="/genres/edit?id={{@index}}"
+                class="btn btn-warning btn-sm"
+              >Edit</a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{else}}
+    <div class="alert alert-info">
+      No genres found.
+      <a href="/genres/form">Create one</a>
+    </div>
+  {{/if}}
+</div>
